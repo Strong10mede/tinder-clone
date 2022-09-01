@@ -6,7 +6,6 @@ import Header from "./Components/Header";
 function App() {
   return (
     <div className="app">
-      <h1>Yeloo</h1>
       <Header />
       {/* <TinderCards />
       <SwipeButtons /> */}
