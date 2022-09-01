@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import TinderCards from "./Components/TinderCards";
 import SwipeButtons from "./Components/SwipeButtons";
 import Chats from "./Components/Chats";
-import ChatScreen from "./ChatScreen";
+import ChatScreen from "./Components/ChatScreen";
 function App() {
   return (
     <div className="app">
