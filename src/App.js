@@ -21,8 +21,8 @@ function App() {
           </Route>
           <Route path="/">
             <Header />
-            {/* <TinderCards />
-            <SwipeButtons /> */}
+            <TinderCards />
+            {/*<SwipeButtons /> */}
           </Route>
         </Switch>
       </Router>
