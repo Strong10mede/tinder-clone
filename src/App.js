@@ -9,6 +9,13 @@ import ChatScreen from "./Components/ChatScreen";
 function App() {
   return (
     <div className="app">
+      <Router>
+        <Switch>
+          <Route path="/chat/:person">
+            <Header backButton="/chat" />
+          </Route>
+        </Switch>
+      </Router>
       <Header />
       {/* <TinderCards />
       <SwipeButtons /> */}
