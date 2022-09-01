@@ -1,5 +1,5 @@
-import TinderCards from "./Components/TinderCards";
 import "./App.css";
+import TinderCards from "./Components/TinderCards";
 import SwipeButtons from "./Components/SwipeButtons";
 import Header from "./Components/Header";
 function App() {
