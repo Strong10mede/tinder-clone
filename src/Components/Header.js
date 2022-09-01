@@ -3,6 +3,8 @@ import "./Header.css";
 import PersonIcon from "@mui/icons-material/Person";
 import { IconButton } from "@mui/material";
 import ForumIcon from "@mui/icons-material/Forum";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { Link, useHistory } from "react-router-dom";
 
 function Header() {
   return (
