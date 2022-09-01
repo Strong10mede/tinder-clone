@@ -8,8 +8,8 @@ function App() {
     <div className="app">
       <h1>Yeloo</h1>
       <Header />
-      <TinderCards />
-      <SwipeButtons />
+      {/* <TinderCards />
+      <SwipeButtons /> */}
     </div>
   );
 }
