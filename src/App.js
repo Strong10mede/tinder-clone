@@ -13,12 +13,19 @@ function App() {
         <Switch>
           <Route path="/chat/:person">
             <Header backButton="/chat" />
+            {/* <ChatScreen /> */}
+          </Route>
+          <Route path="/chat">
+            <Header backButton="/" />
+            {/* <Chats /> */}
+          </Route>
+          <Route path="/">
+            <Header />
+            {/* <TinderCards />
+            <SwipeButtons /> */}
           </Route>
         </Switch>
       </Router>
-      <Header />
-      {/* <TinderCards />
-      <SwipeButtons /> */}
     </div>
   );
 }
