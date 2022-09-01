@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import TinderCards from "./Components/TinderCards";
 import SwipeButtons from "./Components/SwipeButtons";
-import Chats from "./Chats";
+import Chats from "./Components/Chats";
 import ChatScreen from "./ChatScreen";
 function App() {
   return (
