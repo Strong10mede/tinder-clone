@@ -17,7 +17,7 @@ function App() {
           </Route>
           <Route path="/chat">
             <Header backButton="/" />
-            {/* <Chats /> */}
+            <Chats />
           </Route>
           <Route path="/">
             <Header />
