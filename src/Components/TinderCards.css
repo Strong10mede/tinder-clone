@@ -26,3 +26,8 @@
 .swipe {
   position: absolute;
 }
+
+.swipe__results {
+  position: relative;
+  top: 19rem;
+}

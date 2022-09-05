@@ -41,7 +41,7 @@ function TinderCards() {
             </div>
           </TinderCard>
         ))}
-        {swipe && <h2>You Swiped {swipe}</h2>}
+        {swipe && <h2 className="swipe__results">You Swiped {swipe}</h2>}
       </div>
     </div>
   );
