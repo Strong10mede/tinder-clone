@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Avatar from "@material-ui/core/Avatar";
+import { Avatar } from "@mui/material";
 import "./ChatScreen.css";
 
 const ChatScreen = () => {

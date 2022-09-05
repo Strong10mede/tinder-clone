@@ -5,6 +5,7 @@ import { db } from "../firebase";
 
 function TinderCards() {
   const [people, setPeople] = useState([]);
+  const [swipe, setSwipe] = useState("");
 
   useEffect(() => {
     const unsubscribe = db
@@ -17,6 +18,10 @@ function TinderCards() {
       unsubscribe();
     };
   }, []);
+  const onSwipe = (direction) => {
+    console.log("You swiped: " + direction);
+    setSwipe(direction);
+  };
 
   return (
     <div>
@@ -25,6 +30,7 @@ function TinderCards() {
           <TinderCard
             className="swipe"
             key={person.name}
+            onSwipe={onSwipe}
             preventSwipe={["up", "down"]}
           >
             <div
@@ -35,6 +41,7 @@ function TinderCards() {
             </div>
           </TinderCard>
         ))}
+        {swipe && <h2>You Swiped {swipe}</h2>}
       </div>
     </div>
   );
