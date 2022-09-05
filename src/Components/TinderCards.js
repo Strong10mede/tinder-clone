@@ -35,7 +35,7 @@ function TinderCards() {
       Array(3)
         .fill(0)
         .map((i) => React.createRef()),
-    [3]
+    []
   );
 
   const updateCurrentIndex = (val) => {
