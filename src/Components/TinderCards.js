@@ -29,6 +29,7 @@ function TinderCards() {
   const [lastDirection, setLastDirection] = useState();
   // used for outOfFrame closure
   const currentIndexRef = useRef(currentIndex);
+  console.log(currentIndexRef.current, "hi");
 
   const childRefs = useMemo(
     () =>
