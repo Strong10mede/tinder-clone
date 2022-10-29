@@ -7,13 +7,14 @@ const ChatInfo = ({ peopleId, name, profilePic }) => {
   const [peopleMessages, setPeopleMessages] = useState([]);
 
   useEffect(() => {
-    db.collection("rooms")
+    db.collection("people")
       .doc(peopleId)
-      .collection("messages")
+      .collection("chat")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
-        setPeopleMessages(snapshot.docs.map((doc) => doc.data()))
-      );
+      .onSnapshot((snapshot) => {
+        console.log(snapshot.docs.map((doc) => doc.data()));
+        setPeopleMessages(snapshot.docs.map((doc) => doc.data()));
+      });
   }, [peopleId]);
   return (
     <div className="chatInfo">
@@ -21,9 +22,11 @@ const ChatInfo = ({ peopleId, name, profilePic }) => {
         <Avatar className="chatInfo__image" src={profilePic} />
         <div className="chatInfo__details">
           <h2>{name}</h2>
-          <p>{peopleMessages?.message}</p>
+          <p>{peopleMessages[0]?.message}</p>
         </div>
-        <p className="chatInfo__timestamp">{peopleMessages?.timestamp}</p>
+        <p className="chatInfo__timestamp">
+          {new Date(peopleMessages[0]?.timestamp.toDate()).toLocaleTimeString()}
+        </p>
       </Link>
     </div>
   );
