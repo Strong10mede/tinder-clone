@@ -6,25 +6,32 @@ import TinderCards from "./Components/TinderCards";
 import SwipeButtons from "./Components/SwipeButtons";
 import Chats from "./Components/Chats";
 import ChatScreen from "./Components/ChatScreen";
+import { useStateValue } from "./StateLayer";
+import Login from "./Components/Login/Login";
 function App() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="app">
       <Router>
-        <Switch>
-          <Route path="/chat/:person">
-            <Header backButton="/chat" />
-            <ChatScreen />
-          </Route>
-          <Route path="/chat">
-            <Header backButton="/" />
-            <Chats />
-          </Route>
-          <Route path="/">
-            <Header />
-            <TinderCards />
-            <SwipeButtons />
-          </Route>
-        </Switch>
+        {!user ? (
+          <Login />
+        ) : (
+          <Switch>
+            <Route path="/chat/:person">
+              <Header backButton="/chat" />
+              <ChatScreen />
+            </Route>
+            <Route path="/chat">
+              <Header backButton="/" />
+              <Chats />
+            </Route>
+            <Route path="/">
+              <Header />
+              <TinderCards />
+              <SwipeButtons />
+            </Route>
+          </Switch>
+        )}
       </Router>
     </div>
   );
