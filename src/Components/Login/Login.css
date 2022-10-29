@@ -30,7 +30,7 @@
 }
 
 .login__container > button:hover {
-  background-color: rgba(253,55,116,255);
+  background-color: rgba(253, 55, 116, 255);
 }
 
 @media only screen and (max-width: 600px) {
