@@ -5,7 +5,6 @@ import "./Chat.css";
 import ChatInfo from "./ChatInfo/ChatInfo";
 function Chat() {
   const [peoples, setPeoples] = useState([]);
-
   useEffect(() => {
     db.collection("people").onSnapshot((snapshot) => {
       setPeoples(
@@ -23,7 +22,7 @@ function Chat() {
         <ChatInfo
           peopleId={people?.id}
           name={people?.name}
-          profilepic={people?.url}
+          profilePic={people?.url}
         />
       ))}
     </div>

@@ -2,9 +2,9 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
-import TinderCards from "./Components/TinderCards";
+import TinderCards from "./Components/TinderCards/TinderCards";
 import SwipeButtons from "./Components/SwipeButtons/SwipeButtons";
-import Chats from "./Components/Chats";
+import Chat from "./Components/Chat/Chat";
 import ChatScreen from "./Components/ChatScreen";
 import { useStateValue } from "./StateLayer";
 import Login from "./Components/Login/Login";
@@ -23,7 +23,7 @@ function App() {
             </Route>
             <Route path="/chat">
               <Header backButton="/" />
-              <Chats />
+              <Chat />
             </Route>
             <Route path="/">
               <Header />

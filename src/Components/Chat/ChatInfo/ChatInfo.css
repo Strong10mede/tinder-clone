@@ -28,6 +28,12 @@
 
 .chatInfo__image {
   margin-right: 20px;
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+}
+
+.chatInfo__image > img {
+  object-fit: cover;
 }
 
 .chatInfo__timestamp {

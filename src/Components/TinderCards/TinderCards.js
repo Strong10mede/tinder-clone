@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
-import { db } from "../firebase";
+import { db } from "../../firebase";
 import "./TinderCards.css";
 function TinderCards() {
   const [people, setPeople] = useState([]);
