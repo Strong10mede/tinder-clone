@@ -43,7 +43,7 @@
 .infoText {
   position: fixed;
   display: flex;
-  bottom: 17.5vh;
+  bottom: 20vh;
   width: 100vw;
   justify-content: center;
 }
