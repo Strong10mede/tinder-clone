@@ -11,6 +11,11 @@
   box-shadow: 0px 10px 53px 0px rgba(0, 0, 0, 0.3) !important;
 }
 
+.swipeButtons .MuiIconButton-root:hover {
+  background-color: white !important;
+  transform: scale(1.2);
+}
+
 .swipeButtons__repeat {
   padding: 3vw !important;
   color: #f5b748 !important;

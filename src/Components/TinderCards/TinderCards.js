@@ -2,6 +2,7 @@ import React, { useState, useMemo, useRef, useEffect } from "react";
 // import TinderCard from '../react-tinder-card/index'
 import TinderCard from "react-tinder-card";
 import { db } from "../../firebase";
+import SwipeButtons from "../SwipeButtons/SwipeButtons";
 import "./TinderCards.css";
 function TinderCards() {
   const [people, setPeople] = useState([]);
@@ -84,7 +85,6 @@ function TinderCards() {
 
   return (
     <div>
-      <h1>React Tinder Card</h1>
       <div className="tinderCards__cardContainer">
         {people.map((people, index) => (
           <TinderCard
@@ -103,26 +103,13 @@ function TinderCards() {
           </TinderCard>
         ))}
       </div>
-      <div className="buttons">
-        <button
-          style={{ backgroundColor: !canSwipe && "#c3c4d3" }}
-          onClick={() => swipe("left")}
-        >
-          Swipe left!
-        </button>
-        <button
-          style={{ backgroundColor: !canGoBack && "#c3c4d3" }}
-          onClick={() => goBack()}
-        >
-          Undo swipe!
-        </button>
-        <button
-          style={{ backgroundColor: !canSwipe && "#c3c4d3" }}
-          onClick={() => swipe("right")}
-        >
-          Swipe right!
-        </button>
-      </div>
+      <SwipeButtons
+        canSwipe={canSwipe}
+        canGoBack={canGoBack}
+        swipe={swipe}
+        goBack={goBack}
+      />
+
       {lastDirection ? (
         <h2 key={lastDirection} className="infoText">
           You swiped {lastDirection}

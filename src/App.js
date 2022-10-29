@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import TinderCards from "./Components/TinderCards/TinderCards";
-import SwipeButtons from "./Components/SwipeButtons/SwipeButtons";
+
 import Chat from "./Components/Chat/Chat";
 import ChatScreen from "./Components/Chat/ChatScreen/ChatScreen";
 import { useStateValue } from "./StateLayer";
@@ -28,7 +28,6 @@ function App() {
             <Route path="/">
               <Header />
               <TinderCards />
-              <SwipeButtons />
             </Route>
           </Switch>
         )}
