@@ -24,7 +24,6 @@ function ChatScreen() {
       .onSnapshot((snapshot) =>
         setPeopleMessages(snapshot.docs.map((doc) => doc.data()))
       );
-    console.log(peopleId);
   }, [peopleId]);
   return (
     <div className="chatScreen">

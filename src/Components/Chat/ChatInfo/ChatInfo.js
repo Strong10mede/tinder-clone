@@ -12,7 +12,6 @@ const ChatInfo = ({ peopleId, name, profilePic }) => {
       .collection("chat")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
-        console.log(snapshot.docs.map((doc) => doc.data()));
         setPeopleMessages(snapshot.docs.map((doc) => doc.data()));
       });
   }, [peopleId]);
