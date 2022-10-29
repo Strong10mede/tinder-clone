@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./Chat.css";
+import "./ChatScreen.css";
 import { useParams } from "react-router-dom";
 import StarBorderOutlineIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { db } from "../../firebase";
 import Message from "../Message/Message";
 import ChatInput from "./ChatInput/ChatInput";
-function Chat() {
+function ChatScreen() {
   const { peopleId } = useParams();
   const [peopleDetails, setPeopleDetails] = useState(null);
   const [peopleMessages, setPeopleMessages] = useState([]);
@@ -26,21 +26,21 @@ function Chat() {
       );
   }, [peopleId]);
   return (
-    <div className="chat">
-      <div className="chat__header">
-        <div className="chat__headerLeft">
-          <h4 className="chat__channelName">
+    <div className="chatScreen">
+      <div className="chatScreen__header">
+        <div className="chatScreen__headerLeft">
+          <h4 className="chatScreen__channelName">
             <strong>#{peopleDetails?.name} </strong>
             <StarBorderOutlineIcon />
           </h4>
         </div>
-        <div className="chat__headerRight">
+        <div className="chatScreen__headerRight">
           <p>
             <InfoOutlinedIcon /> Details
           </p>
         </div>
       </div>
-      <div className="chat__messages">
+      <div className="chatScreen__messages">
         {peopleMessages.map(({ message, timestamp, user, userImage }) => (
           <Message
             message={message}
@@ -56,4 +56,4 @@ function Chat() {
   );
 }
 
-export default Chat;
+export default ChatScreen;
