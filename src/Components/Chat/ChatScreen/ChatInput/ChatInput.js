@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useStateValue } from "../../../StateProvider";
-import { db } from "../../../firebase";
+import { useStateValue } from "../../../../StateLayer";
+import { db } from "../../../../firebase";
 import firebase from "firebase";
 import "./ChatInput.css";
 function ChatInput({ peopleName, peopleId }) {
@@ -20,6 +20,7 @@ function ChatInput({ peopleName, peopleId }) {
         userImage: user?.photoURL,
       });
     }
+    setInput("");
   };
 
   return (
@@ -28,7 +29,7 @@ function ChatInput({ peopleName, peopleId }) {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={`Send a message to #${peopleName}`}
+          placeholder={`Send a message to # ${peopleName}`}
         />
         <button type="submit" onClick={sendMessage}>
           SEND

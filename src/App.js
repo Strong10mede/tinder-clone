@@ -5,7 +5,7 @@ import Header from "./Components/Header/Header";
 import TinderCards from "./Components/TinderCards/TinderCards";
 import SwipeButtons from "./Components/SwipeButtons/SwipeButtons";
 import Chat from "./Components/Chat/Chat";
-import ChatScreen from "./Components/ChatScreen";
+import ChatScreen from "./Components/Chat/ChatScreen/ChatScreen";
 import { useStateValue } from "./StateLayer";
 import Login from "./Components/Login/Login";
 function App() {
@@ -13,11 +13,11 @@ function App() {
   return (
     <div className="app">
       <Router>
-        {user ? (
+        {!user ? (
           <Login />
         ) : (
           <Switch>
-            <Route path="/chat/:person">
+            <Route path="/chat/:peopleId">
               <Header backButton="/chat" />
               <ChatScreen />
             </Route>

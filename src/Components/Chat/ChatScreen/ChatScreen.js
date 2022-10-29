@@ -3,8 +3,8 @@ import "./ChatScreen.css";
 import { useParams } from "react-router-dom";
 import StarBorderOutlineIcon from "@mui/icons-material/StarBorderOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { db } from "../../firebase";
-import Message from "../Message/Message";
+import { db } from "../../../firebase";
+import Message from "../../Message/Message";
 import ChatInput from "./ChatInput/ChatInput";
 function ChatScreen() {
   const { peopleId } = useParams();
@@ -13,17 +13,18 @@ function ChatScreen() {
 
   useEffect(() => {
     if (peopleId) {
-      db.collection("rooms")
+      db.collection("people")
         .doc(peopleId)
         .onSnapshot((snapshot) => setPeopleDetails(snapshot.data()));
     }
-    db.collection("rooms")
+    db.collection("people")
       .doc(peopleId)
-      .collection("messages")
+      .collection("chat")
       .orderBy("timestamp", "asc")
       .onSnapshot((snapshot) =>
         setPeopleMessages(snapshot.docs.map((doc) => doc.data()))
       );
+    console.log(peopleId);
   }, [peopleId]);
   return (
     <div className="chatScreen">
@@ -51,7 +52,7 @@ function ChatScreen() {
           />
         ))}
       </div>
-      <ChatInput channelName={peopleDetails?.name} channelId={peopleId} />
+      <ChatInput peopleName={peopleDetails?.name} peopleId={peopleId} />
     </div>
   );
 }
