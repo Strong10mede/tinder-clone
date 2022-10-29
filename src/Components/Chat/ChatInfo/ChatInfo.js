@@ -3,10 +3,10 @@ import "./ChatInfo.css";
 import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const ChatInfo = ({ name, message, profilePic, timestamp }) => {
+const ChatInfo = ({ peopleId, name, message, profilePic, timestamp }) => {
   return (
     <div className="chatInfo">
-      <Link to={`/chat/${name}`}>
+      <Link to={`/chat/${peopleId}`}>
         <Avatar className="chatInfo__image" src={profilePic} />
         <div className="chatInfo__details">
           <h2>{name}</h2>
